@@ -12,3 +12,9 @@ Compile the `std::vector` implementation
 ```
 g++ -std=c++23 -o conjgrad-vector conjgrad-vector.cpp
 ```
+
+Compile the `std::vector` + `OpenMP` implementation
+
+```
+g++ -std=c++23 -o conjgrad-openmp conjgrad-openmp.cpp -fopenmp
+```
