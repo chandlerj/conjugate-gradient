@@ -1,5 +1,4 @@
 #include <vector>
-#include <ranges>
 #include <expected>
 #include <iostream>
 #include <cmath>
@@ -89,11 +88,10 @@ std::vector<T> vec_scale(const std::vector<T> &a, T b) {
 
 
 
-template <typename T, std::size_t N>
+template <typename T>
 std::expected<T, std::string> l2_norm(const std::vector<T> &x) {
 
     if (x.size() == 0) return std::unexpected("vector is empty");
-
     T res = 0;
     for (const T &item : x) {
         res += item * item;
@@ -148,14 +146,6 @@ std::expected<std::vector<T>, std::string> conjugate_gradient(
         std::cout << old_residual_norm << std::endl;
     }
     return x;
-}
-
-template <typename T, std::size_t N>
-void print_arr(std::array<T,N> x){
-    for (const auto &item : x) {
-        std::cout << item << " ";
-    }
-    std::cout << std::endl;
 }
 
 int main() {
